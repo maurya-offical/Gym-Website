@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW - Body Mechanical World</title>
+  <meta name="description"
+    content="Strength coaching, small-group training, and recovery — built for people who train like it matters. Claim your free 3-day pass.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #14171c;
+      --surface-2: #1b1f26;
+      --line: #2a2f38;
+      --text: #edeef0;
+      --muted: #9aa1ac;
+      --ember: #ff5a2e;
+      --ember-dim: #c9451f;
+      --brass: #d4a24c;
+      --steel: #5b6b7c;
+      --radius: 2px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--ember);
+      color: #0b0d10;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .display-font {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brass);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--brass);
+      display: inline-block;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar-forge {
+      background: rgba(11, 13, 16, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding-top: .9rem;
+      padding-bottom: .9rem;
+    }
+
+    .navbar-forge .navbar-brand {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      color: var(--text) !important;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .navbar-forge .navbar-brand svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .navbar-forge .nav-link {
+      color: var(--muted) !important;
+      font-size: 0.92rem;
+      font-weight: 500;
+      margin: 0 .7rem;
+      transition: color .2s ease;
+      position: relative;
+    }
+
+    .navbar-forge .nav-link:hover {
+      color: var(--text) !important;
+    }
+
+    .navbar-forge .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--ember);
+      transition: width .25s ease;
+    }
+
+    .navbar-forge .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-ember {
+      background: var(--ember);
+      border: 1px solid var(--ember);
+      color: #0b0d10;
+      font-weight: 700;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      padding: .65rem 1.4rem;
+      border-radius: var(--radius);
+      transition: all .2s ease;
+    }
+
+    .btn-ember:hover {
+      background: transparent;
+      color: var(--ember);
+      border-color: var(--ember);
+    }
+
+    .btn-outline-steel {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 600;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      padding: .65rem 1.4rem;
+      border-radius: var(--radius);
+      transition: all .2s ease;
+    }
+
+    .btn-outline-steel:hover {
+      border-color: var(--brass);
+      color: var(--brass);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 8.5rem 0 0 0;
+      background:
+        radial-gradient(ellipse 900px 500px at 85% -10%, rgba(255, 90, 46, 0.14), transparent 60%),
+        radial-gradient(ellipse 700px 500px at 0% 20%, rgba(91, 107, 124, 0.14), transparent 60%),
+        var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.6rem);
+      font-weight: 700;
+      line-height: 1.02;
+      color: var(--text);
+    }
+
+    .hero h1 .accent {
+      color: var(--ember);
+    }
+
+    .hero-lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 520px;
+    }
+
+    .hero-badge-row {
+      display: flex;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .hero-badge-row span {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .hero-badge-row i {
+      color: var(--brass);
+    }
+
+    /* plate ring visual */
+    .plate-visual {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1/1;
+      margin: 0 auto;
+    }
+
+    .plate-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1.5px solid var(--line);
+    }
+
+    .plate-ring.r1 {
+      inset: 0;
+    }
+
+    .plate-ring.r2 {
+      inset: 14%;
+      border-color: var(--steel);
+      opacity: .7;
+    }
+
+    .plate-ring.r3 {
+      inset: 28%;
+      border-color: var(--brass);
+      opacity: .6;
+    }
+
+    .plate-ring.r4 {
+      inset: 42%;
+      background: var(--ember);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 60px rgba(255, 90, 46, 0.45);
+    }
+
+    .plate-ring.r4 span {
+      font-family: 'Oswald';
+      font-weight: 700;
+      color: #0b0d10;
+      font-size: .95rem;
+      text-align: center;
+      line-height: 1.15;
+    }
+
+    /* ===== STAT TICKER (signature) ===== */
+    .stat-ticker {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      padding: 1.5rem 0;
+    }
+
+    .plate-icon {
+      flex: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 3px solid var(--brass);
+      position: relative;
+    }
+
+    .plate-icon::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 50%;
+      border: 1px solid var(--brass);
+      opacity: .6;
+    }
+
+    .stat-num {
+      font-family: 'JetBrains Mono';
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: .6rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* feature cards */
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem 1.6rem;
+      height: 100%;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+
+    .feature-card:hover {
+      border-color: var(--ember);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      border: 1px solid var(--brass);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brass);
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: .6rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 0;
+    }
+
+    /* program cards */
+    .program-card {
+      background: linear-gradient(180deg, var(--surface-2), var(--surface));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .program-top {
+      padding: 1.8rem 1.6rem 1.2rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .program-level {
+      font-family: 'JetBrains Mono';
+      font-size: .7rem;
+      letter-spacing: .1em;
+      color: var(--ember);
+      text-transform: uppercase;
+    }
+
+    .program-card h4 {
+      font-size: 1.2rem;
+      margin: .4rem 0 .3rem;
+    }
+
+    .program-meta {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .program-body {
+      padding: 1.2rem 1.6rem 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .program-body p {
+      color: var(--muted);
+      font-size: .9rem;
+      flex: 1;
+    }
+
+    .program-link {
+      color: var(--brass);
+      font-size: .85rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .program-link:hover {
+      color: var(--ember);
+    }
+
+    /* trainer cards */
+    .trainer-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color .25s ease;
+    }
+
+    .trainer-card:hover {
+      border-color: var(--brass);
+    }
+
+    .trainer-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      filter: grayscale(35%) contrast(1.05);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trainer-info {
+      padding: 1.3rem 1.4rem 1.5rem;
+    }
+
+    .trainer-info h5 {
+      font-family: 'Oswald';
+      font-size: 1.05rem;
+      margin-bottom: .15rem;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .trainer-role {
+      color: var(--brass);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-family: 'JetBrains Mono';
+    }
+
+    .trainer-bio {
+      color: var(--muted);
+      font-size: .85rem;
+      margin: .7rem 0;
+    }
+
+    .trainer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: .2rem .7rem;
+      font-size: .72rem;
+      color: var(--muted);
+      margin-bottom: .6rem;
+    }
+
+    .trainer-social a {
+      color: var(--muted);
+      margin-right: .8rem;
+      font-size: 1rem;
+      transition: color .2s;
+    }
+
+    .trainer-social a:hover {
+      color: var(--ember);
+    }
+
+    /* testimonials */
+    .testi-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      height: 100%;
+    }
+
+    .testi-stars {
+      color: var(--brass);
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .testi-quote {
+      color: var(--text);
+      font-size: .98rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .testi-name {
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .testi-meta {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    /* pricing */
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2.2rem 1.8rem;
+      height: 100%;
+      position: relative;
+    }
+
+    .price-card.popular {
+      border-color: var(--ember);
+      background: linear-gradient(180deg, rgba(255, 90, 46, 0.08), var(--surface) 40%);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -1px;
+      right: 1.5rem;
+      background: var(--ember);
+      color: #0b0d10;
+      font-family: 'JetBrains Mono';
+      font-size: .68rem;
+      letter-spacing: .08em;
+      padding: .3rem .7rem;
+      border-radius: 0 0 4px 4px;
+      font-weight: 700;
+    }
+
+    .price-tier {
+      color: var(--muted);
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .price-amount {
+      font-family: 'JetBrains Mono';
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: .4rem 0 1.2rem;
+    }
+
+    .price-amount span {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .price-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.6rem;
+    }
+
+    .price-list li {
+      color: var(--muted);
+      font-size: .88rem;
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .price-list i {
+      color: var(--brass);
+    }
+
+    /* lead gen section */
+    .lead-section {
+      background:
+        radial-gradient(ellipse 800px 400px at 90% 0%, rgba(255, 90, 46, 0.12), transparent 60%),
+        var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lead-form-card {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2.2rem;
+    }
+
+    .form-control,
+    .form-select {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: var(--radius);
+      padding: .7rem .9rem;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      background: var(--bg);
+      color: var(--text);
+      border-color: var(--ember);
+      box-shadow: 0 0 0 3px rgba(255, 90, 46, 0.15);
+    }
+
+    .form-control::placeholder {
+      color: #6b7280;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 1.6rem;
+    }
+
+    .trust-row span {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+    }
+
+    .trust-row i {
+      color: var(--brass);
+    }
+
+    /* FAQ */
+    .accordion-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      margin-bottom: .7rem;
+      border-radius: var(--radius) !important;
+    }
+
+    .accordion-button {
+      background: var(--surface);
+      color: var(--text);
+      font-family: 'Oswald';
+      font-weight: 600;
+      letter-spacing: .02em;
+      border-radius: var(--radius) !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: var(--surface-2);
+      color: var(--ember);
+      box-shadow: none;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: var(--line);
+    }
+
+    .accordion-button::after {
+      filter: invert(1);
+    }
+
+    .accordion-body {
+      color: var(--muted);
+      font-size: .92rem;
+      background: var(--surface);
+    }
+
+    /* footer */
+    .footer {
+      background: #08090b;
+      border-top: 1px solid var(--line);
+      padding: 4.5rem 0 0;
+    }
+
+    .footer h6 {
+      font-family: 'JetBrains Mono';
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+      display: block;
+      margin-bottom: .65rem;
+      transition: color .2s;
+    }
+
+    .footer a:hover {
+      color: var(--text);
+    }
+
+    .footer-brand {
+      font-family: 'Oswald';
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: .05em;
+    }
+
+    .footer p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      margin-right: .6rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      margin-top: 3rem;
+      padding: 1.4rem 0;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .newsletter-input {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    /* sticky mobile CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+      padding: .8rem 1rem;
+      display: none;
+    }
+
+    @media (max-width:767.98px) {
+      .sticky-cta {
+        display: flex;
+        gap: .6rem;
+      }
+
+      body {
+        padding-bottom: 70px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+
+    :root {
+      --wa-green: #25D366;
+      --wa-green-dark: #1DA851;
+      --wa-dark: #111B21;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* ---------- Floating button ---------- */
+    .wa-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--wa-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      z-index: 1000;
+      animation: wa-pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both,
+        wa-bob 3s ease-in-out 1.2s infinite;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .wa-fab:hover {
+      background: var(--wa-green-dark);
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .wa-fab:active {
+      transform: scale(0.94);
+    }
+
+    .wa-fab svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Pulsing ring behind the button, draws attention without being frantic */
+    .wa-fab::before,
+    .wa-fab::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--wa-green);
+      z-index: 1;
+      animation: wa-ripple 2.4s ease-out infinite;
+    }
+
+    .wa-fab::after {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes wa-ripple {
+      0% {
+        transform: scale(1);
+        opacity: 0.55;
+      }
+
+      100% {
+        transform: scale(1.9);
+        opacity: 0;
+      }
+    }
+
+    @keyframes wa-pop-in {
+      0% {
+        transform: scale(0) rotate(-30deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes wa-bob {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .wa-fab:hover {
+      animation-play-state: paused;
+    }
+
+    /* ---------- Tooltip / chat teaser ---------- */
+    .wa-tooltip {
+      position: fixed;
+      bottom: 40px;
+      right: 96px;
+      background: #fff;
+      color: var(--wa-dark);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      white-space: nowrap;
+      z-index: 999;
+      opacity: 0;
+      transform: translateX(10px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .wa-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -6px;
+      transform: translateY(-50%);
+      border-width: 6px 0 6px 6px;
+      border-style: solid;
+      border-color: transparent transparent transparent #fff;
+    }
+
+    .wa-fab:hover+.wa-tooltip,
+    .wa-fab:focus-visible+.wa-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 480px) {
+      .wa-fab {
+        bottom: 18px;
+        right: 18px;
+        width: 54px;
+        height: 54px;
+      }
+
+      .wa-fab svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .wa-tooltip {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .wa-fab,
+      .wa-fab::before,
+      .wa-fab::after {
+        animation: none !important;
+      }
+    }
+
+    /* page filler content, just for context */
+    .demo-content {
+      max-width: 640px;
+      margin: 80px auto;
+      padding: 0 24px;
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-forge fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#top">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#ff5a2e" stroke-width="2" />
+          <circle cx="12" cy="12" r="4" fill="#ff5a2e" />
+        </svg>
+        BMW <span style="color:var(--muted);font-weight:400;">BODY MECHANICAL WORLD</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        style="border-color:var(--line);">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trainers">Trainers</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#membership">Membership</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <!-- <a href="#lead" class="btn btn-ember">Claim Free Pass</a> -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero-grid-lines"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center g-5 pb-5">
+        <div class="col-lg-6">
+          <div class="eyebrow mb-3">Strength &amp; Conditioning Gym</div>
+          <h1 class="mb-4">Train your <span class="accent">strongest</span> self</h1>
+          <p class="hero-lead mb-4">Strength coaching, small-group training, and a members-only recovery suite — built
+            for people who train like it matters. No fluff, no crowded machines, no guesswork.</p>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <!-- <a href="#lead" class="btn btn-ember">Claim your free 3-day pass</a> -->
+            <a href="#programs" class="btn btn-outline-steel">See the programs</a>
+          </div>
+          <div class="hero-badge-row">
+            <span><i class="bi bi-patch-check-fill"></i> Certified coaches</span>
+            <span><i class="bi bi-clock-history"></i> Open 5am to 11am & 4pm-11pm</span>
+            <!-- <span><i class="bi bi-shield-check"></i> No lock-in contracts</span> -->
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="plate-visual">
+            <div class="plate-ring r1"></div>
+            <div class="plate-ring r2"></div>
+            <div class="plate-ring r3"></div>
+            <div class="plate-ring r4"><span class="mono">8 YRS<br>TRAINING</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ STAT TICKER (signature element) ============ -->
+  <div class="stat-ticker">
+    <div class="container">
+      <div class="row g-4 text-center text-lg-start">
+        <div class="col-6 col-lg-3">
+          <div class="stat-item justify-content-center justify-content-lg-start">
+            <div class="plate-icon"></div>
+            <div>
+              <div class="stat-num">1,200+</div>
+              <div class="stat-label">Members trained</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-item justify-content-center justify-content-lg-start">
+            <div class="plate-icon"></div>
+            <div>
+              <div class="stat-num">4.5 / 5</div>
+              <div class="stat-label">Avg. member rating</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-item justify-content-center justify-content-lg-start">
+            <div class="plate-icon"></div>
+            <div>
+              <div class="stat-num">60+</div>
+              <div class="stat-label">Classes per week</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-item justify-content-center justify-content-lg-start">
+            <div class="plate-icon"></div>
+            <div>
+              <div class="stat-num">12</div>
+              <div class="stat-label">Years in operation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHY FORGE ============ -->
+  <section id="why">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <div class="eyebrow mb-2">Why Forge</div>
+          <h2 class="section-title">Built different from the big-box gym</h2>
+          <p class="section-sub">Every part of the club is designed around one outcome: you actually seeing results, not
+            just a scanned membership card.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-person-badge"></i></div>
+            <h4>Certified coaches</h4>
+            <p>Every trainer holds a national strength certification and specializes in one discipline, not five.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-people"></i></div>
+            <h4>Small-group coaching</h4>
+            <p>Capped at 4 people per session so your form actually gets corrected, every rep.</p>
+          </div>
+        </div>
+        <!-- <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="bi bi-heart-pulse"></i></div>
+          <h4>Recovery suite</h4>
+          <p>Sauna, cold plunge, and mobility bay included in every membership tier — no add-on fees.</p>
+        </div>
+      </div> -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-calendar2-week"></i></div>
+            <h4>Flexible scheduling</h4>
+            <p>Book, swap, or cancel classes from your phone up to 30 minutes before start time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROGRAMS ============ -->
+  <section id="programs"
+    style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <div class="eyebrow mb-2">Programs</div>
+          <h2 class="section-title">Pick your discipline</h2>
+          <p class="section-sub">Every program runs on a structured progression, not a random workout of the day.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-level">All levels</div>
+              <h4>Build strength</h4>
+              <div class="program-meta">45 min · 4x/week</div>
+            </div>
+            <div class="program-body">
+              <p>Barbell-based programming built around squat, press, and hinge patterns with built-in progression
+                tracking.</p>
+              <a href="#lead" class="program-link">View schedule <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-level">Intermediate</div>
+              <h4>BLose fat / body recomposition</h4>
+              <div class="program-meta">50 min · 3x/week</div>
+            </div>
+            <div class="program-body">
+              <p>Pad work, bag rounds, and footwork drills that double as one of the highest calorie-burn sessions on
+                the floor.</p>
+              <a href="#lead" class="program-link">View schedule <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-level">All levels</div>
+              <h4>Improve conditioning</h4>
+              <div class="program-meta">30 min · 5x/week</div>
+            </div>
+            <div class="program-body">
+              <p>Fast, coached interval circuits for people who want maximum output in a tight lunch break or morning
+                slot.</p>
+              <a href="#lead" class="program-link">View schedule <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-level">All levels</div>
+              <h4>Recover from injury</h4>
+              <div class="program-meta">40 min · 2x/week</div>
+            </div>
+            <div class="program-body">
+              <p>Guided mobility work and breathwork sessions designed to keep you training pain-free long-term.</p>
+              <a href="#lead" class="program-link">View schedule <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRAINERS ============ -->
+  <section id="trainers">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <div class="eyebrow mb-2">Workouts</div>
+          <h2 class="section-title">trainings</h2>
+          <p class="section-sub">Real specialists, not generalists — each coach owns one discipline and stays in their
+            lane.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <img class="trainer-photo"
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop"
+              alt="Portrait of a strength coach">
+            <div class="trainer-info">
+              <!-- <span class="trainer-badge"><i class="bi bi-award"></i> 9 yrs experience</span>
+            <h5>Marcus Reyes</h5> -->
+              <div class="trainer-role">Build strength</div>
+              <p class="trainer-bio">Former competitive powerlifter focused on clean technique and long-term progression
+                over ego lifting.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <img class="trainer-photo"
+              src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop"
+              alt="Portrait of a boxing coach">
+            <div class="trainer-info">
+              <div class="trainer-role">Lose fat / body recomposition</div>
+              <p class="trainer-bio">Amateur boxing background, now coaching footwork and combinations for members of
+                every fitness level.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <img class="trainer-photo"
+              src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=600&auto=format&fit=crop"
+              alt="Portrait of a HIIT coach">
+            <div class="trainer-info">
+              <div class="trainer-role">Improve conditioning</div>
+              <p class="trainer-bio">Builds high-energy interval programming that scales for beginners and advanced
+                athletes in the same room.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <img class="trainer-photo"
+              src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=600&auto=format&fit=crop"
+              alt="Portrait of a mobility coach">
+            <div class="trainer-info">
+              <div class="trainer-role">Recover from injury</div>
+              <p class="trainer-bio">Physiotherapy-trained coach helping members move better, recover faster, and train
+                around old injuries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="reviews"
+    style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <div class="eyebrow mb-2">Member results</div>
+          <h2 class="section-title">What members say after month one</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">I'd tried three gyms before this one. The difference is the coaching actually
+              corrects your form instead of just counting reps.</p>
+            <div class="testi-name">Rohan Malhotra</div>
+            <div class="testi-meta">Member for 14 months</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">The small-group format means I'm never lost in a crowd. Down 12kg and lifting heavier
+              than I ever have.</p>
+            <div class="testi-name">Sana Iyer</div>
+            <div class="testi-meta">Member for 8 months</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">Booking classes from my phone and the recovery suite being included changed how often
+              I actually show up.</p>
+            <div class="testi-name">Karan Verma</div>
+            <div class="testi-meta">Member for 20 months</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ LEAD GEN ============ -->
+  <!-- <section id="lead" class="lead-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 class="section-title">Get 3 days, on us</h2>
+          <p class="section-sub mb-4">Train a full program, meet the coach, and see the recovery suite before you commit
+            to anything. No pressure, no upsell call.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="lead-form-card"
+            onsubmit="event.preventDefault(); this.querySelector('.form-success').classList.remove('d-none'); this.querySelector('.form-fields').classList.add('d-none');">
+            <div class="form-fields">
+              <div class="mb-3">
+                <label class="form-label small text-uppercase" style="color:var(--muted);letter-spacing:.06em;">Full
+                  name</label>
+                <input type="text" class="form-control" placeholder="Your name" required>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label small text-uppercase"
+                    style="color:var(--muted);letter-spacing:.06em;">Email</label>
+                  <input type="email" class="form-control" placeholder="you@email.com" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label small text-uppercase"
+                    style="color:var(--muted);letter-spacing:.06em;">Phone</label>
+                  <input type="tel" class="form-control" placeholder="98765 43210" required>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="form-label small text-uppercase" style="color:var(--muted);letter-spacing:.06em;">Primary
+                  goal</label>
+                <select class="form-select">
+                  <option>Build strength</option>
+                  <option>Lose fat / body recomposition</option>
+                  <option>Improve conditioning</option>
+                  <option>Recover from injury</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-ember w-100">Call Now</button>
+            </div>
+            <div class="form-success d-none text-center py-4">
+              <i class="bi bi-check-circle" style="font-size:2.2rem;color:var(--ember);"></i>
+              <h5 class="mt-3 mb-2">Pass request received</h5>
+              <p class="mb-0" style="color:var(--muted);">Call us at [phone number] to schedule your first visit.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <div class="eyebrow mb-2">Questions</div>
+          <h2 class="section-title">Before you visit</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+              </h2>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq2">Is this suitable if I've never trained before?</button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Yes. Every program is coached and scaled to your current level — you're
+                  never left to figure out form on your own.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq3">Can I cancel my membership anytime?</button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">There are no lock-in contracts on any tier. You can pause or cancel from the
+                  member app with 7 days' notice.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq4">What should I bring to my first session?</button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Just training shoes, a water bottle, and a towel. We provide equipment,
+                  chalk, and a locker for the visit.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq5">How do I book classes as a member?</button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Through the member app — you can book, swap, or cancel a class up to 30
+                  minutes before it starts.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand mb-3">BODY <span style="color:var(--muted);font-weight:400;">MECHANICAL WORLD</span>
+          </div>
+          <p>Strength and conditioning coaching for people who train like it matters. One location, no franchises, no
+            shortcuts.</p>
+          <div class="footer-social mt-3">
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Quick links</h6>
+          <a href="#programs">Programs</a>
+          <a href="#trainers">Trainers</a>
+          <a href="#membership">Membership</a>
+          <a href="#reviews">Reviews</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Programs</h6>
+          <a href="#programs">Strength &amp; Conditioning</a>
+          <a href="#programs">Boxing</a>
+          <a href="#programs">Group HIIT</a>
+          <a href="#programs">Mobility</a>
+        </div>
+        <div class="col-lg-4">
+          <h6>Visit us</h6>
+          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Kaushambi</p>
+          <p class="mb-2"><i class="bi bi-telephone me-2"></i>+91 98765 43210</p>
+          <p class="mb-3"><i class="bi bi-envelope me-2"></i>hello@forgeathletic.club</p>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap justify-content-between">
+        <div>© 2026 Body Mechanical World. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="#" style="margin:0;">Privacy Policy</a>
+          <a href="#" style="margin:0;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- mobile sticky CTA -->
+  <div class="sticky-cta">
+    <a href="#" class="btn btn-ember flex-fill">JOIN NOW</a>
+    <a href="tel:+919876543210" class="btn btn-outline-steel flex-fill">Call Us</a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <a href="https://wa.me/1234567890?text=Hi!%20I%20have%20a%20question" class="wa-fab" target="_blank"
+    rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path
+        d="M16 0C7.163 0 0 7.163 0 16c0 2.822.741 5.556 2.147 7.966L0 32l8.24-2.107A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.42 0-4.79-.646-6.86-1.87l-.492-.29-4.89 1.251 1.298-4.766-.32-.49A13.28 13.28 0 0 1 2.667 16C2.667 8.64 8.64 2.667 16 2.667S29.333 8.64 29.333 16 23.36 29.333 16 29.333zm7.29-9.98c-.4-.2-2.36-1.164-2.726-1.297-.365-.133-.63-.2-.897.2-.266.4-1.03 1.297-1.264 1.564-.232.266-.465.3-.864.1-.4-.2-1.687-.622-3.213-1.983-1.187-1.058-1.988-2.365-2.22-2.765-.233-.4-.025-.616.175-.816.18-.179.4-.465.6-.698.2-.233.266-.4.4-.665.133-.266.066-.5-.034-.699-.1-.2-.897-2.16-1.23-2.959-.324-.777-.653-.672-.897-.685-.232-.012-.499-.014-.765-.014-.266 0-.699.1-1.064.5-.366.4-1.397 1.365-1.397 3.328s1.43 3.858 1.63 4.125c.2.266 2.815 4.3 6.82 6.03.953.412 1.696.657 2.276.841.956.304 1.826.261 2.514.158.767-.114 2.36-.965 2.693-1.897.332-.932.332-1.73.232-1.897-.1-.166-.365-.266-.765-.465z" />
+    </svg>
+  </a>
+  <span class="wa-tooltip">Chat with us</span>
+
+</body>
+
+</html>
